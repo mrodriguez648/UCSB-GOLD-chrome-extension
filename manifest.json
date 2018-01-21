@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "UCSB GOLD Chrome Extension",
     "description": "Google Chrome extension designed to read schedule info from UCSB's GOLD system and search for the required textbooks for classes",
-    "version": "1.0",
+    "version": "1.01",
 	"author": "Karl Wang, Matthew Rodriguez, Cristobal Caballero, Armin Mahini",
     "icons": { "128": "logo.png" },
 
