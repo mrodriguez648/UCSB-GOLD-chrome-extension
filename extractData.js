@@ -22,7 +22,7 @@
 	    win.focus();
 	}
 
-	let button1HTML = '<tr><td class="selectCol1"><button type="button" style="width:100%; height:100%; margin:3px; background:#2280bf; border-radius: 5px; border: none; padding: 10px 15px; color:#fff; font-size : .95em; font-weight: 600;"> Click me to open textbook page in new window (GauchoBooks)  </button></td></tr>';
+	let button1HTML = '<tr><td class="selectCol1"><button type="button" style="width:100%; height:100%; margin:3px; background:#2280bf; border-radius: 5px; border: none; padding: 10px 15px; color:#fff; font-size : .95em; font-weight: 600;"> Open textbook page in new window (GauchoBooks)  </button></td></tr>';
 	let temp = $($.parseHTML(button1HTML));
 	temp.click(changePage);
 	let stuff = $("div.fr.fullwidthmobile").prepend(temp);
