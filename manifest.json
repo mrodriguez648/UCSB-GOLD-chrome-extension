@@ -4,20 +4,20 @@
     "description": "Google Chrome extension designed to read schedule info from UCSB's GOLD system and search for the required textbooks for classes",
     "version": "1.0",
 	"author": "Karl Wang, Matthew Rodriguez, Cristobal Caballero, Armin Mahini",
-    "icons": { "128": "icon.png" },
+    "icons": { "128": "logo.png" },
 
     "content_scripts": [
 		{
-			"matches": ["*://my.sa.ucsb.edu/gold/StudentSchedule.*"],
+			"matches": ["*://my.sa.ucsb.edu/gold/StudentSchedule.aspx"],
 			"css": [],
-			"js": ["extractData.js"],
+			"js": ["jquery-3.3.1.min.js", "extractData.js"],
 			"run_at" : "document_idle"
 		},
 		 
 		{
-		 	"matches": ["*http://www.ucsbstuff.com/SelectTermDept.aspx"],
+		 	"matches": ["*://www.ucsbstuff.com/selecttermdept.aspx"],
 		 	"css": [],
-		 	"js": ["select-textbook.js"],
+		 	"js": ["jquery-3.3.1.min.js", "select-textbook.js"],
 		 	"run_at" : "document_idle"
 		}
 
