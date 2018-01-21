@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "UCSB GOLD Chrome Extension",
-    "description": "Google Chrome extension designed to read schedule info from UCSB's GOLD system and integrate it into Google Calendar",
+    "description": "Google Chrome extension designed to read schedule info from UCSB's GOLD system and search for the required textbooks for classes",
     "version": "1.0",
 	"author": "Karl Wang, Matthew Rodriguez, Cristobal Caballero, Armin Mahini",
     "icons": { "128": "icon.png" },
@@ -12,15 +12,24 @@
 			"css": [],
 			"js": ["extractData.js"],
 			"run_at" : "document_idle"
-		}
+		}//,
+		// Might not need if executing in singular js file
+		// {
+		// 	"matches": ["*http://www.ucsbstuff.com/SelectTermDept.aspx"],
+		// 	"css": [],
+		// 	"js": ["extractTextBookData.js"],
+		// 	"run_at" : "document_idle"
+		// }
+
 	],
-	// Might not need, GUI purposes/functionality
+	// Might not need, GUI functionality
 	//"options_ui": {
 	//	"page": "options.html"
 	//},
 	//"options_page": "options.html",
     "permissions": [
         "https://my.sa.ucsb.edu/gold/StudentSchedule.aspx",
+        "http://www.ucsbstuff.com/SelectTermDept.aspx",
 		"storage"
     ]
 }
