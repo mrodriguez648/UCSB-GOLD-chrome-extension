@@ -12,14 +12,14 @@
 			"css": [],
 			"js": ["extractData.js"],
 			"run_at" : "document_idle"
-		}//,
-		// Might not need if executing in singular js file
-		// {
-		// 	"matches": ["*http://www.ucsbstuff.com/SelectTermDept.aspx"],
-		// 	"css": [],
-		// 	"js": ["extractTextBookData.js"],
-		// 	"run_at" : "document_idle"
-		// }
+		},
+		 
+		{
+		 	"matches": ["*http://www.ucsbstuff.com/SelectTermDept.aspx"],
+		 	"css": [],
+		 	"js": ["select-textbook.js"],
+		 	"run_at" : "document_idle"
+		},
 
 	],
 	// Might not need, GUI functionality
