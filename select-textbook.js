@@ -1,3 +1,5 @@
+(function(){
+
 let clickOption = function(searchString, selectClass){
 	let selectElement = $("select." + selectClass)[0];
 	selectElement.value = $("option:contains(" + searchString + ")", selectElement)[0].value;
@@ -14,3 +16,5 @@ setTimeout(function () {
 		$("#ctl00_ctl00_Content_Content_btnGetCourseMaterials").click();
 	}, 1000);
 }, 1000);
+
+})();

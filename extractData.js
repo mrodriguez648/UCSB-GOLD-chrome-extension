@@ -14,6 +14,6 @@
 		schdle[i][1] = splitStr[1];
 	}
 
-	chrome.storage.local.set(schdle);
-	
+	chrome.storage.local.set({"schdle":schdle});
+
 })();
