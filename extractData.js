@@ -15,34 +15,5 @@ let splitSchedule = function() {
 	}
 }
 
-let clickOption = function(searchString, selectClass){
-	let selectElement = $("select." + selectClass)[0];
-	selectElement.value = $("option:contains(" + searchString + ")", selectElement)[0].value;
-	if(selectElement.onchange){
-		selectElement.onchange();
-	}
-}
-
-let addClasses = function() {
-
-	let term = $(".select-term")[0]
-
-	for(var i = 0; i < schdle.length; i++) {
-		clickOption(term.textContent, "select-term");
-		setTimeout(function () {
-			clickOption(schdle[i][0], "select-dept");  
-			setTimeout(function () {
-				clickOption(schdle[i][1], "select-section");
-				$("#ctl00_ctl00_Content_Content_courseSelect_btnAddCourseToList").click()  
-			}, 1000);
-		}, 1000);
-	}
-
-	$("#ctl00_ctl00_Content_Content_btnGetCourseMaterials").click();
-}
-
 splitSchedule();
 
-window.location = 'http://www.ucsbstuff.com/SelectTermDept.aspx#?options=go_here';
-
-$(document).ready(addClasses());
