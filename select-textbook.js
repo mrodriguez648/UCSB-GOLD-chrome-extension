@@ -1,5 +1,5 @@
 (function(){
-    
+
     console.log("start");
 
     let clickOption = function(searchString, selectClass){
@@ -23,7 +23,7 @@
 
     let generatePromise = function (department, clas) {
         return new Promise( function (resolve){
-            clickOption("18", "select-term");
+            clickOption("Order Now", "select-term");
             console.log("select-term")
             setTimeout(function () {
                 clickOption(department, "select-dept");
@@ -54,11 +54,19 @@
         $("#ctl00_ctl00_Content_Content_btnGetCourseMaterials").click();
     };
 
-    setTimeout(function(){
+    let startScript = function(){
         chrome.storage.local.get("schdle", function(data){
             console.log(data.schdle);
             addBooks(data.schdle);
         });
-    }, 4000);
+    }
+    window.startScript = startScript;
     console.log("done");
+
+    let buttonHTML = '<tr><td class="selectCol1"><button type="button" style="width:100%; height:130%;margin:3px; background:#3498DB; border-radius: 5px; padding:0.7rem 1.5rem; color:#fff; font-size : 20px;"> Click me to run extension. Will use last GOLD data you opened </button></td></tr>';
+    let temp = $($.parseHTML(buttonHTML));
+    temp.click(startScript);
+    let stuff = $("table.tblCourseSelect > tbody").prepend(temp);
+    
+
 })();
