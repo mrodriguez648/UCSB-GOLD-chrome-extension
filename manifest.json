@@ -19,14 +19,10 @@
 		 	"css": [],
 		 	"js": ["select-textbook.js"],
 		 	"run_at" : "document_idle"
-		},
+		}
 
 	],
-	// Might not need, GUI functionality
-	//"options_ui": {
-	//	"page": "options.html"
-	//},
-	//"options_page": "options.html",
+	
     "permissions": [
         "https://my.sa.ucsb.edu/gold/StudentSchedule.aspx",
         "http://www.ucsbstuff.com/SelectTermDept.aspx",
