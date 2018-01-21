@@ -19,6 +19,13 @@
 		 	"css": [],
 		 	"js": ["jquery-3.3.1.min.js", "select-textbook.js"],
 		 	"run_at" : "document_idle"
+		},
+
+		{
+		 	"matches": ["*://www.ucsbstuff.com/SelectTermDept.aspx"],
+		 	"css": [],
+		 	"js": ["jquery-3.3.1.min.js", "select-textbook.js"],
+		 	"run_at" : "document_idle"
 		}
 
 	],
