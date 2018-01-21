@@ -10,6 +10,7 @@ setTimeout(function () {
 	clickOption("CMPSC", "select-dept");  
 	setTimeout(function () {
 		clickOption("130A", "select-section");
-		$("#ctl00_ctl00_Content_Content_courseSelect_btnAddCourseToList").click()  
+		$("#ctl00_ctl00_Content_Content_courseSelect_btnAddCourseToList").click();
+		$("#ctl00_ctl00_Content_Content_btnGetCourseMaterials").click();
 	}, 1000);
 }, 1000);
