@@ -62,7 +62,7 @@
     }
     console.log("done");
 
-    let buttonHTML = '<tr><td class="selectCol1"><button type="button" style="width:100%; height:130%;margin:3px; background:#3498DB; border-radius: 5px; padding:0.7rem 1.5rem; color:#fff; font-size : 20px;"> Click me to run extension. Will use last GOLD data you opened </button></td></tr>';
+    let buttonHTML = '<tr><td class="selectCol1"><button type="button" style="width:100%; height:130%;margin:3px; background:#3498DB; border-radius: 5px; padding:0.7rem 1.5rem; color:#fff; font-size : 20px;"> Click me to run GauchoBooks. Will use last GOLD data you opened </button></td></tr>';
     let temp = $($.parseHTML(buttonHTML));
     temp.click(startScript);
     let stuff = $("table.tblCourseSelect > tbody").prepend(temp);
