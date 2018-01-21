@@ -1,7 +1,9 @@
 (function(){
     
-    //chrome.storage.local.get(schdle);
-    var schdle = [["CMPSC", "130A"],["CMPSC","130B"],["CHIN","32"]]
+    let schdle = new Array();
+    chrome.storage.local.get("schdle", function(data){
+        schdle = data;
+    });
 
     let clickOption = function(searchString, selectClass){
 	    let selectElement = $("select." + selectClass)[0];
