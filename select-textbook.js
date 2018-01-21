@@ -4,32 +4,42 @@
 
     let clickOption = function(searchString, selectClass){
         console.log("clicking...");
-	    let selectElement = $("select." + selectClass)[0];
-	    selectElement.value = $("option:contains(" + searchString + ")", selectElement)[0].value;
-	    if(selectElement.onchange){
+        let selectElement = $("select." + selectClass)[0];
+        let element = $("option:contains(" + searchString + ")", selectElement);
+        if( element.length == 0){
+            console.log("doesnt exist here")
+            return false;
+        }
+        selectElement.value = element[0].value;
+	    var event = new Event('change');
+	    if(selectElement.dispatchEvent(event) == true){
             console.log("onchange...");
-		    selectElement.onchange();
+            selectElement.dispatchEvent(event);
 	    }else{
             console.log("nochange");
-        }
+	    }
+	    return true;
     }
 
     let generatePromise = function (department, clas) {
         return new Promise( function (resolve){
-            clickOption("WINTER 18", "select-term");
+            clickOption("18", "select-term");
             console.log("select-term")
             setTimeout(function () {
                 clickOption(department, "select-dept");
                 console.log("select-dept" + department)
                 setTimeout(function () {
-                    clickOption(clas, "select-section");
+                    if(clickOption(clas, "select-section") == false){
+                        resolve("doesnt exist");
+                        return;
+                    }
                     console.log("select-sect" + clas)
                     $("#ctl00_ctl00_Content_Content_courseSelect_btnAddCourseToList").click();
                     setTimeout(function(){
                         resolve(department + clas);
-                    }, 2000);
-                }, 2000);
-            }, 2000);
+                    }, 1000);
+                }, 1000);
+            }, 1000);
         })   
     }
 
@@ -49,6 +59,6 @@
             console.log(data.schdle);
             addBooks(data.schdle);
         });
-    }, 8000);
+    }, 4000);
     console.log("done");
 })();
